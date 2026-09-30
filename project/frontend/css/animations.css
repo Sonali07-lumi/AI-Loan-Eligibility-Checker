@@ -1,0 +1,11 @@
+#cd,#cg,#cr{position:fixed;left:0;top:0;pointer-events:none;z-index:99;display:none;border-radius:50%}
+body.cc #cd,body.cc #cg,body.cc #cr{display:block}
+#cd{width:7px;height:7px;background:var(--a2);box-shadow:0 0 10px var(--a2)}
+#cg{width:240px;height:240px;background:radial-gradient(circle,rgba(0,214,163,.13),transparent 65%)}
+#cr{width:30px;height:30px;border:1px solid rgba(50,245,200,.45);transition:width .2s,height .2s,background .2s}
+#cr.big{width:52px;height:52px;background:rgba(0,214,163,.08)}
+body.cc a,body.cc button{cursor:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

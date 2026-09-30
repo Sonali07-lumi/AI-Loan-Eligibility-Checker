@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EMI Calculator — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>EMI Calculator</h1>
+  <p class="muted">Standard reducing-balance formula. Results update as you type.</p>
+  <div class="g g2">
+    <div class="card">
+      <div data-f="e-amt|Loan amount|Enter loan amount|m"></div>
+      <div data-f="e-rate|Annual interest rate (%)|Enter annual interest rate|n"></div>
+      <div class="field">
+        <label for="e-ten">Tenure</label>
+        <div class="two">
+          <input id="e-ten" type="text" inputmode="numeric" autocomplete="off" placeholder="Enter loan tenure">
+          <select id="e-unit" aria-label="Tenure unit">
+            <option value="y">Years</option>
+            <option value="m">Months</option>
+          </select>
+        </div>
+        <p class="err" id="e-ten-e" role="alert"></p>
+      </div>
+      <button class="btn ghost" id="emi-reset" type="button">Reset</button>
+    </div>
+    <div class="card" id="emi-res" aria-live="polite"><p class="empty">Enter amount, rate and tenure to see your EMI.</p></div>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/emi.js"></script>
+</body>
+</html>

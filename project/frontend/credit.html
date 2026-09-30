@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Credit Score Analyzer — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>Credit Score Analyzer</h1>
+  <p class="muted">Interpret a score you already have. This does not generate a bureau score.</p>
+  <div class="g g2">
+    <form class="card" id="cr-f" novalidate>
+      <div data-f="c-s|Credit score (300–900)|Enter your credit score|n"></div>
+      <div data-f="c-u|Credit utilization % (optional)|Enter % of your limit in use|n"></div>
+      <div data-f="c-p|On-time payments % (optional)|Enter % of payments made on time|n"></div>
+      <div data-f="c-h|Credit history in years (optional)|Enter age of oldest account|n"></div>
+      <div data-f="c-i|Credit applications in last 12 months (optional)|Enter number of applications|n"></div>
+      <button class="btn" type="submit">Analyze score</button>
+    </form>
+    <div class="card" id="cr-res" aria-live="polite"><p class="empty">Enter your score to see an interpretation.</p></div>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/credit.js"></script>
+</body>
+</html>

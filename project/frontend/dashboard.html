@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>Welcome back</h1>
+  <p class="muted">Your tools and latest results. Values show in the currency you saved them in.</p>
+
+  <div class="g g4" id="ov"></div>
+
+  <div class="g g4 mt">
+    <a class="card tool" href="loan.html"><span class="ic">◈</span><h3>Loan Eligibility Checker</h3><p>Estimate how a lender might view your profile.</p><span class="cta">Open →</span></a>
+    <a class="card tool" href="credit.html"><span class="ic">◉</span><h3>Credit Score Analyzer</h3><p>Understand a score you already have.</p><span class="cta">Open →</span></a>
+    <a class="card tool" href="emi.html"><span class="ic">∑</span><h3>EMI Calculator</h3><p>Live monthly payment and interest split.</p><span class="cta">Open →</span></a>
+    <a class="card tool" href="tips.html"><span class="ic">✦</span><h3>AI Financial Tips</h3><p>Budget split and timeline for your goal.</p><span class="cta">Open →</span></a>
+  </div>
+
+  <div class="g g2 mt">
+    <div class="card">
+      <h3>Recent activity</h3>
+      <div id="recent"></div>
+    </div>
+    <a class="card tool" href="tips.html">
+      <span class="ic">✦</span><h3>Ask the AI assistant</h3>
+      <p>Set a goal and get a budget split and timeline built from your numbers.</p>
+      <span class="cta">Open AI Tips →</span>
+    </a>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const F = window.Finova;
+  const recent = F.store.get('fin_recent', []);
+  const byTool = (t) => recent.find((x) => x.tool === t);
+  const loan = byTool('loan'), emiRec = byTool('emi'), credit = byTool('credit'), tips = byTool('tips');
+  const cards = [
+    ['Latest loan estimate', loan ? loan.summary : null],
+    ['Latest EMI', emiRec ? F.fmt(emiRec.vals.emi, emiRec.cur) : (loan ? F.fmt(loan.vals.emi, loan.cur) : null)],
+    ['Last credit score', credit ? credit.vals.score : null],
+    ['Monthly surplus', tips ? F.fmt(tips.vals.surplus, tips.cur) : null],
+  ];
+  document.getElementById('ov').innerHTML = cards.map(([label, value]) =>
+    `<div class="card"><div class="sl">${label}</div><div class="stat">${value ?? '—'}</div></div>`).join('');
+
+  const NAMES = { loan: 'Loan check', credit: 'Credit analysis', emi: 'EMI calculation', tips: 'Financial tips' };
+  document.getElementById('recent').innerHTML = recent.length
+    ? `<ul class="fac">${recent.slice(0, 5).map((x) =>
+        `<li><span class="lv">${NAMES[x.tool]}</span><span class="tx">${F.esc(String(x.summary))} · ${x.cur} · ${new Date(x.ts).toLocaleDateString()}</span></li>`).join('')}</ul>`
+    : '<p class="empty">No activity yet. Try a tool to see results here.</p>';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Loan Eligibility Checker — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>Loan Eligibility Checker</h1>
+  <p class="muted">An estimate based on transparent project rules — not a bank decision.</p>
+  <div class="g g2">
+    <form class="card" id="loan-f" novalidate>
+      <div data-f="l-age|Age|Enter your age|n"></div>
+      <div data-f="l-inc|Monthly income|Enter your monthly income|m"></div>
+      <div class="field">
+        <label for="l-emp">Employment type</label>
+        <select id="l-emp">
+          <option value="">Select employment type</option>
+          <option value="salaried">Salaried</option>
+          <option value="self">Self-employed</option>
+          <option value="business">Business owner</option>
+          <option value="retired">Retired / pension</option>
+          <option value="unemployed">Currently not earning</option>
+        </select>
+        <p class="err" id="l-emp-e" role="alert"></p>
+      </div>
+      <div data-f="l-cs|Credit score (300–900)|Enter your credit score|n"></div>
+      <div data-f="l-amt|Desired loan amount|Enter desired loan amount|m"></div>
+      <div data-f="l-yrs|Loan tenure (years, 1–30)|Enter tenure in years|n"></div>
+      <div data-f="l-debt|Existing monthly loan payments (optional)|Enter total monthly EMIs, if any|m"></div>
+      <button class="btn" type="submit">Check eligibility</button>
+    </form>
+    <div class="card" id="loan-res" aria-live="polite"><p class="empty">Fill in the form to see your estimate.</p></div>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/loan.js"></script>
+</body>
+</html>

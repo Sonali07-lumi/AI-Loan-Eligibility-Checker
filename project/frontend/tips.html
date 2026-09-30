@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI Financial Tips — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>AI Financial Tips</h1>
+  <p class="muted">Budget split and goal timeline from your own numbers, in your currency.</p>
+  <div class="g g2">
+    <form class="card" id="tp-f" novalidate>
+      <div class="field">
+        <label for="t-goal">Financial goal</label>
+        <input id="t-goal" maxlength="120" autocomplete="off" placeholder="What are you saving for?">
+        <p class="err" id="t-goal-e" role="alert"></p>
+      </div>
+      <div data-f="t-inc|Monthly income|Enter your monthly income|m"></div>
+      <div data-f="t-exp|Monthly expenses|Enter your monthly expenses|m"></div>
+      <div data-f="t-sav|Current savings|Enter your current savings|m"></div>
+      <div data-f="t-tar|Cost of your goal (optional)|Enter the amount you need|m"></div>
+      <button class="btn" type="submit">Get insights</button>
+    </form>
+    <div class="card" id="tp-res" aria-live="polite"><p class="empty">Add your details to see practical suggestions.</p></div>
+  </div>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tips.js"></script>
+</body>
+</html>

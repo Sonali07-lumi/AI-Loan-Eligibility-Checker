@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About &amp; Privacy — FINOVA</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+<header id="site-header"></header>
+<main>
+  <h1>About, privacy &amp; security</h1>
+  <div class="g g2">
+    <div class="card">
+      <h3>How it works</h3>
+      <p class="muted">FINOVA applies fixed, published rules to the numbers you enter: income-to-obligation
+        ratios, credit bands, and the reducing-balance EMI formula. When configured, the backend also asks
+        Claude to write a plain-language explanation of the rule-based result. Nothing here is a lender
+        decision.</p>
+      <p class="muted">Each tool shows the assumptions behind its estimate, such as the indicative interest
+        rate used in the loan checker.</p>
+    </div>
+    <div class="card">
+      <h3>Privacy</h3>
+      <ul class="pl muted">
+        <li>Only the fields each tool needs are requested — no names, ID numbers, or bank details.</li>
+        <li>Your currency choice and recent results are stored in this browser; a copy is saved to the
+          backend's Google Sheet only if the server has Sheets configured.</li>
+        <li>The Anthropic API key and Google service-account credentials live only on the server and are
+          never sent to the browser.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note"><b>Disclaimer:</b> This platform provides educational estimates and AI-generated financial
+    insights. Results are not official loan approvals, credit-bureau scores, or professional financial
+    advice.</p>
+</main>
+<footer id="site-footer"></footer>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

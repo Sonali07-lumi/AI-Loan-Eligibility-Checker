@@ -1,0 +1,19 @@
+@media (max-width:1000px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  #menu{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:12px 20px;background:var(--bg2);border-bottom:1px solid var(--b)}
+  nav.open{display:flex}
+  nav a{padding:14px 12px}
+  #cur-sel{margin-left:auto}
+  .g2{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .g4,.g3,.two{grid-template-columns:1fr}
+  main{padding-top:20px}
+  .card{padding:18px}
+  .btn{width:100%}
+  .fac li{flex-direction:column;gap:2px}
+}
