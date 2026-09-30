@@ -3,6 +3,8 @@ AI-powered financial decision support web application that helps users check loa
 
 # FINOVA — AI-Powered Financial Decision Support
 
+Demo - website link 
+https://chipper-tarsier-fd35da.netlify.app/
 > **Smarter Financial Decisions, Powered by AI**
 
 FINOVA is a full-stack AI-powered financial web application designed to help users understand and analyze different aspects of their personal finances through simple, interactive tools.
